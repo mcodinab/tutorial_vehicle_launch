@@ -1,0 +1,15 @@
+/**:
+  ros__parameters:
+    wheel_radius: 0.065  # Leo Rover uses 130mm diameter wheels
+    wheel_width: 0.04    # ~40mm wide tires
+
+    wheel_base: 0.46     # distance between front and rear axle centerline (can be same as total length for diff-drive)
+    wheel_tread: 0.37    # distance between left and right wheel centers
+
+    front_overhang: 0.05  # distance from front wheel to the front bumper
+    rear_overhang: 0.05   # distance from rear wheel to the back
+    left_overhang: 0.05   # from left wheel to left edge
+    right_overhang: 0.05  # from right wheel to right edge
+
+    vehicle_height: 0.4   # total height including sensors/mast
+    max_steer_angle: 0.0  # Leo Rover uses skid steering, so no steering angle

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- load parameter -->
+  <xacro:property name="vehicle_info" value="${xacro.load_yaml('$(find tutorial_vehicle_vehicle_description)/config/vehicle_info.param.yaml')}"/>
+
+  <!-- include additional macros -->
+  <xacro:include filename="$(find tutorial_vehicle_vehicle_description)/urdf/tutorial_vehicle_vehicle.xacro"/>
+  
+  <!-- vehicle body -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="${vehicle_info['/**']['ros__parameters']['wheel_base']/2.0} 0 0" rpy="${pi/2.0} 0 ${pi}"/>
+      <geometry>
+        <mesh filename="package://tutorial_vehicle_vehicle_description/mesh/Chassis.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <!-- spawn Leo -->
+  <xacro:leo robot_ns="leo" fixed="true" default_antenna="true" rockers_fixed="true"/>
+</robot>
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+/**:
+  ros__parameters:
+    simulated_frame_id: "base_link"  # Standard for Leo Rover
+    origin_frame_id: "map"
+    
+    # Best suited for differential drive models like Leo Rover
+    vehicle_model_type: "IDEAL_STEER_VEL"  # simulates differential kinematics via cmd_vel (v, omega)
+
+    initialize_source: "INITIAL_POSE_TOPIC"
+    timer_sampling_time_ms: 25
+    add_measurement_noise: False
+
+    # Velocity settings
+    vel_lim: 2.0  # Max linear velocity [m/s]
+    vel_rate_lim: 1.0  # Max linear acceleration [m/s^2]
+
+    # Steering settings — interpreted as angular velocity limits in this context
+    steer_lim: 1.57  # ~90 deg/s, in radians [rad/s]
+    steer_rate_lim: 3.14  # angular acceleration [rad/s^2]
+
+    # For differential systems, delays are usually negligible, but we’ll keep small values
+    acc_time_delay: 0.05
+    acc_time_constant: 0.1
+    steer_time_delay: 0.05
+    steer_time_constant: 0.1
+
+    # Covariance for simulated localization (can stay low unless you're simulating sensor drift)
+    x_stddev: 0.0001
+    y_stddev: 0.0001
